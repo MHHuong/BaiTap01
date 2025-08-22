@@ -16,7 +16,11 @@ public class LoginServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.sendRedirect("/vidu1/Login.html");
 
+	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("text/html");
@@ -28,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 			resp.addCookie(cookie);
 			resp.sendRedirect("/vidu1/hello");
 		} else {
-			resp.sendRedirect(req.getContextPath() + "/login.html");
+			resp.sendRedirect("/vidu1/Login.html");
 		}
 		
 	}
